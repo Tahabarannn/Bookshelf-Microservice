@@ -29,8 +29,7 @@ public class LibraryService {
         LibraryDto libraryDto = new LibraryDto(library.getId(),
                 library.getUserBook()
                         .stream()
-                        .map(bookServiceClient::getBookById)
-                        .map(ResponseEntity::getBody)
+                        .map(book -> bookServiceClient.getBookById(book).getBody())
                         .collect(Collectors.toList()));
         return libraryDto;
     }

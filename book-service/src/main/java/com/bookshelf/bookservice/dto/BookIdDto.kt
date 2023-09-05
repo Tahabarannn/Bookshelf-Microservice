@@ -1,7 +1,7 @@
 package com.bookshelf.bookservice.dto
 
 data class BookIdDto @JvmOverloads constructor(
-        val id: String? = "",
+        val bookId: String? = "",
         val isbn: String,
 ) {
     companion object {
